@@ -1,4 +1,4 @@
-# Project Title
+# End-to-End IoT Solution Implementation with Cloud Integration
 
 ## Overview
 
@@ -11,7 +11,7 @@
    - Provide a unique name for your IoT Hub.
    - Choose the appropriate pricing and resource group settings.
    - Review and create the IoT Hub.
-   
+
 ![Azure IoT Hub](images/IoT-hub.png)
 
 ### Step 2: Registering IoT Device
