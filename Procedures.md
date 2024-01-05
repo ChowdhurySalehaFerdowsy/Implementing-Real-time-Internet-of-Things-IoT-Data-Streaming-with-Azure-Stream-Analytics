@@ -1,7 +1,7 @@
 # Implementing Real-time Internet of Things (IoT) Data Streaming with Azure Stream Analytics
 
 ## Overview
-In the provided `IOT_DATA_STREAMING` folder, we have several Python scripts, including `sensor.py` and `app.py`. In `sensor.py`, a `read` function generates random values for temperature and humidity, simulating IoT device readings. In a real-world scenario, these readings would come directly from IoT devices.
+ In `sensor.py`, a `read` function generates random values for temperature and humidity, simulating IoT device readings. In a real-world scenario, these readings would come directly from IoT devices.
 
 ![Sensor Code](images/sensor-code.png)
 
@@ -68,32 +68,31 @@ The databse should look like the following:
 
 ![Database Ready](images/DatabaseReady.png)
 
-3. Connect to the database from VSCode.
-4. Install the SQL server extension in VSCode if not already installed. Navigate to the SQL server extension, add a connection, input server name and database name, and provide SQL login credentials. Upon providing the credentials, you should see the database appear in VSCode. I named the server as `server1chowdhury.database.windows.net` obtained from Azure SQL Server.
-5. Select your database and click on "New Query."
+3. Next we need to connect SQL database in VSCode. Install the SQL server extension in VSCode if not already installed. Navigate to the SQL server extension, add a connection, input server name and database name, and provide SQL login credentials. Upon providing the credentials, you should see the database appear in VSCode. I named the server as `server1chowdhury.database.windows.net` obtained from Azure SQL Server.
+4. Select your database and click on "New Query."
 
 ![New Query](images/newquery.png)
 
-6. Create a table for telemetry data using the code from "CreateTableTelemetryData." Run the SQL code.
+5. Create a table for telemetry data using the code from "CreateTableTelemetryData." Run the SQL code.
 ![Telemetry Data](images/telemetryData.png)
 
-7. Refresh the table under the database, and you should see the new table.
+6. Refresh the table under the database, and you should see the new table.
 ![Table](images/table.png)
 ![New Table](images/newtable.png)
 
-8. Configure the output of Stream Analytics service. Go back to Stream Analytics service, select 'Outputs' from the left menu, and click '+ Add Output'. Then select SQL Database as the output. Configure SQL as shown in the picture.
+7. Go back to Stream Analytics service, select 'Outputs' from the left menu, and click '+ Add Output'. Then select SQL Database as the output. Configure SQL as shown in the picture.
 
 ![SQL as Output](images/SQLasOutput.png)
 
-9. Add a query in the analytics service. This query groups IoT data in fixed window size (e.g., every 1 minute) and calculates the average. You can modify the window size and sample rate in the `app.py` script.
+8. Add a query in the analytics service. This query groups IoT data in fixed window size (e.g., every 1 minute) and calculates the average. You can modify the window size and sample rate in the `app.py` script.
 ![Add Query](images/addquery.png)
 
 With input configured to get data from IoT Hub and output configured to send data to the SQL database, start the job in Stream Analytics.
 
-10. Go to Stream Analytics in the Azure portal and click on "Start Job."
+9. Go to Stream Analytics in the Azure portal and click on "Start Job."
 ![Start Job](images/startjob.png)
 
-11. Run the Python code in VSCode, and you should see the table loading with data. By starting the Stream Analytics, it processes the data from IoT hub and sends it to the SQL database. You can save the data in a CSV file for offline use.
+10. Run the Python code in VSCode, and you should see the table loading with data. By starting the Stream Analytics, it processes the data from IoT hub and sends it to the SQL database. You can save the data in a CSV file for offline use.
 
 ![Database Table](images/databasetable.png)
 
