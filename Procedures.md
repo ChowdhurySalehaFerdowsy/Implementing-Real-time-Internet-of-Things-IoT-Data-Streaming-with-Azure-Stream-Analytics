@@ -1,7 +1,7 @@
 # Implementing Real-time Internet of Things (IoT) Data Streaming with Azure Stream Analytics
 
 ## Overview
-In the provided `IOT_DATA_STREAMING` folder, we have four Python scripts, including `sensor.py` and `app.py`. In `sensor.py`, a `read` function generates random values for temperature and humidity, simulating IoT device readings. In a real-world scenario, these readings would come directly from IoT devices.
+In the provided `IOT_DATA_STREAMING` folder, we have several Python scripts, including `sensor.py` and `app.py`. In `sensor.py`, a `read` function generates random values for temperature and humidity, simulating IoT device readings. In a real-world scenario, these readings would come directly from IoT devices.
 
 ![Sensor Code](images/sensor-code.png)
 
@@ -13,7 +13,7 @@ To facilitate the retrieval of the connection string in `app.py`, we create a `.
 
 ![Environment Variables](images/env.png)
 
-### Step 1: Sending Data from IoT Device to IoT Hub
+## Step 1: Sending Data from IoT Device to IoT Hub
 
 1. Go to the [Azure Portal](https://portal.azure.com/).
 2. Create a new Azure IoT Hub.
@@ -67,6 +67,7 @@ Review the input data by navigating to "Query" and selecting "Inputs."
 The databse should look like the following: 
 
 ![Database Ready](images/DatabaseReady.png)
+
 3. Connect to the database from VSCode.
 4. Install the SQL server extension in VSCode if not already installed. Navigate to the SQL server extension, add a connection, input server name and database name, and provide SQL login credentials. Upon providing the credentials, you should see the database appear in VSCode. I named the server as `server1chowdhury.database.windows.net` obtained from Azure SQL Server.
 5. Select your database and click on "New Query."
@@ -96,7 +97,7 @@ With input configured to get data from IoT Hub and output configured to send dat
 
 ![Database Table](images/databasetable.png)
 
-### Step 4: Connecting SQL Database to Power BI
+## Step 4: Connecting SQL Database to Power BI
 1. Install and open Power BI.
 2. Choose "Database" from the left menu, login to SQL server database with your credentials, and click on "Connect."
 
