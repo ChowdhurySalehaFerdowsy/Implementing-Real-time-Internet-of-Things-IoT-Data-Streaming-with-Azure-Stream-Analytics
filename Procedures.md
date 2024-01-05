@@ -81,6 +81,7 @@ The databse should look like the following:
 ![New Query](images/newquery.png)
 
 5. Create a table for telemetry data using the code from "CreateTableTelemetryData." Run the SQL code.
+
 ![Telemetry Data](images/telemetryData.png)
 
 6. Refresh the table under the database, and you should see the new table.
