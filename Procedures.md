@@ -42,8 +42,8 @@ This connection string is crucial as the client uses it to generate a Shared Acc
 
 ## Step 2: Connecting Azure IoT Hub to Stream Analytics Service
 We need to create a Stream Analytics Job service in Azure and provide input from the IoT hub.
-
 1. Create a Stream Analytics job in the Azure portal.
+
 ![Create Stream Analytics](images/create-stream-analytics.png)
 
 2. Navigate to "inputs" from the left menu and click on "+ Add input". Select IoT Hub from the dropdown menu.
@@ -66,9 +66,12 @@ Review the input data by navigating to "Query" and selecting "Inputs."
 3. Connect to the database from VSCode.
 4. Install the SQL server extension in VSCode if not already installed. Navigate to the SQL server extension, add a connection, input server name and database name, and provide SQL login credentials. Upon providing the credentials, you should see the database appear in VSCode. I named the server as `server1chowdhury.database.windows.net` obtained from Azure SQL Server.
 5. Select your database and click on "New Query."
+
 ![New Query](images/newquery.png)
+
 6. Create a table for telemetry data using the code from "CreateTableTelemetryData." Run the SQL code.
 ![Telemetry Data](images/telemetryData.png)
+
 7. Refresh the table under the database, and you should see the new table.
 ![Table](images/table.png)
 ![New Table](images/newtable.png)
@@ -96,8 +99,11 @@ With input configured to get data from IoT Hub and output configured to send dat
 ![Power BI Login](images/powerBI-login.png)
 
 3. Visualize data from IoT devices in the dashboard.
+
 ![Power BI Data](images/powerbi-data.png)
+
 4. On the right-hand menu, drag and drop 'Telemetry DataID' into X-axis and 'Sum of Temperature' and 'Sum of Humidity' into Y-axis.
+
 ![Axis Setup](images/axis-setup.png)
 
 5. Observe live data in the dashboard sent from the IoT device. Keep the `app.py` code running to add real-time data to the SQL database for continuous updates in Power BI.
