@@ -26,6 +26,6 @@ The lab's objective is to establish an end-to-end IoT solution, including device
 
 ![System Diagram](images/system-model.png)
 
-## Acknowledgments
+## Acknowledgment
 
-I would like to express my gratitude to Professor Dr. Mohamed Ramy for his valuable teaching, guidance, and the foundational code provided during the real-time data course.
+I would like to express my gratitude to Professor Dr. Mohamed Ramy for his valuable teaching, guidance, and the foundational code provided during the 'Remote data and real-time application' course.

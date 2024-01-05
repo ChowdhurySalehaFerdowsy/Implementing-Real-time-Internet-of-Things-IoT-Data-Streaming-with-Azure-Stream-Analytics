@@ -1,7 +1,7 @@
 # Implementing Real-time Internet of Things (IoT) Data Streaming with Azure Stream Analytics
 
-## Overview
- In `sensor.py`, a `read` function generates random values for temperature and humidity, simulating IoT device readings. In a real-world scenario, these readings would come directly from IoT devices.
+## Setting Up
+ If we look at the `sensor.py` script in this github repository we will see that a `read` function generates random values for temperature and humidity, simulating IoT device readings. In a real-world scenario, these readings would come directly from IoT devices.
 
 ![Sensor Code](images/sensor-code.png)
 
@@ -26,12 +26,15 @@ To facilitate the retrieval of the connection string in `app.py`, we create a `.
 3. Navigate to the overview page of the IoT hub in Azure Portal.
 4. Select "Devices" from the left-hand menu.
 5. Register the device by clicking on "+ Add Device" and assigning it an ID (e.g., 'sensor-1').
+
 ![Device Registration](images/Picture2.png)
+
 6. Copy the "primary connection string" from the 'sensor-1' details.
 
 ![Connection String](images/connection-string.png)
 
 7. Paste the connection string into the `.env` file in VSCode.
+
 ![Paste Connection String](images/pasting.png)
 
 This connection string is crucial as the client uses it to generate a Shared Access Signature (SAS) Token, which is used for communication with Azure IoT.
@@ -47,7 +50,9 @@ We need to create a Stream Analytics Job service in Azure and provide input from
 ![Create Stream Analytics](images/create-stream-analytics.png)
 
 2. Navigate to "inputs" from the left menu and click on "+ Add input". Select IoT Hub from the dropdown menu.
+
 ![Add IoT Hub as an Input](images/add-input-in-stream.png)
+
 3. Configure Input in IoT Hub, selecting the subscription and the IoT hub name as preferred. Save the configuration.
 
 ![Configure Input](images/config-input.png)
@@ -59,7 +64,9 @@ Review the input data by navigating to "Query" and selecting "Inputs."
 
 ## Step 3: Sending the Output of Stream Analytics to SQL Database
 1. Create a SQL Database. While creating the SQL database, create a SQL server, and use SQL authentication, as shown in the pictures.
+
 ![Create SQL Database](images/CreateSQL.png)
+
 2. Configure the server as shown in the picture.
 
 ![Configure SQL Server](images/Server-config.png)
@@ -77,6 +84,7 @@ The databse should look like the following:
 ![Telemetry Data](images/telemetryData.png)
 
 6. Refresh the table under the database, and you should see the new table.
+
 ![Table](images/table.png)
 ![New Table](images/newtable.png)
 
@@ -85,11 +93,11 @@ The databse should look like the following:
 ![SQL as Output](images/SQLasOutput.png)
 
 8. Add a query in the analytics service. This query groups IoT data in fixed window size (e.g., every 1 minute) and calculates the average. You can modify the window size and sample rate in the `app.py` script.
+
 ![Add Query](images/addquery.png)
 
-With input configured to get data from IoT Hub and output configured to send data to the SQL database, start the job in Stream Analytics.
+9. With input configured to get data from IoT Hub and output configured to send data to the SQL database, start the job in Stream Analytics. Go to Stream Analytics in the Azure portal and click on "Start Job."
 
-9. Go to Stream Analytics in the Azure portal and click on "Start Job."
 ![Start Job](images/startjob.png)
 
 10. Run the Python code in VSCode, and you should see the table loading with data. By starting the Stream Analytics, it processes the data from IoT hub and sends it to the SQL database. You can save the data in a CSV file for offline use.
