@@ -61,7 +61,11 @@ Review the input data by navigating to "Query" and selecting "Inputs."
 1. Create a SQL Database. While creating the SQL database, create a SQL server, and use SQL authentication, as shown in the pictures.
 ![Create SQL Database](images/CreateSQL.png)
 2. Configure the server as shown in the picture.
+
 ![Configure SQL Server](images/Server-config.png)
+
+The databse should look like the following: 
+
 ![Database Ready](images/DatabaseReady.png)
 3. Connect to the database from VSCode.
 4. Install the SQL server extension in VSCode if not already installed. Navigate to the SQL server extension, add a connection, input server name and database name, and provide SQL login credentials. Upon providing the credentials, you should see the database appear in VSCode. I named the server as `server1chowdhury.database.windows.net` obtained from Azure SQL Server.
